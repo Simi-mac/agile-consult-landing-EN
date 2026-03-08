@@ -1,9 +1,9 @@
 import { Award, Users, Building, Clock } from "lucide-react";
 
 const items = [
-  { icon: Clock, label: "+5 anos", desc: "de experiência" },
-  { icon: Users, label: "+120", desc: "profissionais treinados" },
-  { icon: Building, label: "+40", desc: "empresas atendidas" },
+  { icon: Clock, label: "Desde 2020", desc: "no mercado" },
+  { icon: Users, label: "+200", desc: "profissionais treinados" },
+  { icon: Building, label: "+30", desc: "empresas atendidas" },
   { icon: Award, label: "4.9/5", desc: "avaliação média" },
 ];
 

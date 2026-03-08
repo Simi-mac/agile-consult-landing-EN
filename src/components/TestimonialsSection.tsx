@@ -3,21 +3,21 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    text: "A Tribo Ágil transformou completamente nossa forma de trabalhar. Em 6 meses, reduzimos o tempo de entrega em 45% e o time nunca esteve tão alinhado. O ROI foi impressionante.",
+    text: "Conseguimos organizar nossos processos e reduzir retrabalho em poucas semanas. Em 6 meses, o tempo de entrega caiu 45% e o time nunca esteve tão alinhado.",
     name: "Rafael Santos",
     role: "CEO · TechStart Solutions",
     initials: "RS",
     gradient: "from-teal-dark to-primary",
   },
   {
-    text: "A mentoria executiva foi divisor de águas na minha carreira como Product Manager. Me ajudaram a pensar estrategicamente e a me posicionar com muito mais clareza e segurança.",
+    text: "A mentoria me ajudou a pensar estrategicamente e a me posicionar com muito mais clareza. Estruturei a gestão do meu time e os resultados apareceram rapidamente.",
     name: "Ana Carvalho",
     role: "Product Manager · Fintech Nacional",
     initials: "AC",
     gradient: "from-gold-dark to-secondary",
   },
   {
-    text: "O treinamento presencial trouxe a Scrum Master e o time inteiro para o mesmo nível. A aplicabilidade imediata do conteúdo foi o que mais surpreendeu — saímos praticando no dia seguinte.",
+    text: "O treinamento presencial nivelou toda a equipe. A aplicabilidade imediata do conteúdo foi o que mais surpreendeu — saímos praticando no dia seguinte com processos claros.",
     name: "Marcos Costa",
     role: "Scrum Master · Empresa de Varejo",
     initials: "MC",

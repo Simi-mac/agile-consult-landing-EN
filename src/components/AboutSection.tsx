@@ -22,10 +22,10 @@ const AboutSection = () => (
             Sobre Nós
           </span>
           <h2 className="font-display font-extrabold text-[clamp(1.9rem,3.5vw,2.9rem)] leading-[1.08] tracking-[-1.5px] mb-5">
-            Transformando com <span className="text-primary">propósito</span> desde 2020
+            Desde 2020 ajudando empresas a <span className="text-primary">organizar gestão</span> e acelerar resultados
           </h2>
           <p className="text-[15.5px] text-gray-2 leading-relaxed mb-7">
-            A Tribo Ágil nasceu em 2020 com o propósito de ajudar pessoas e empresas a prosperarem por meio da agilidade e de práticas modernas de gestão. Acreditamos no poder da colaboração, da entrega contínua de valor e na construção de ambientes de confiança e alta performance.
+            Mais de 30 líderes e equipes já passaram por nossos treinamentos e consultorias. Acreditamos no poder da colaboração, da entrega contínua de valor e na construção de ambientes de confiança e alta performance.
           </p>
           <div className="flex flex-col gap-3.5">
             {values.map((v) => (
@@ -59,8 +59,8 @@ const AboutSection = () => (
             <p className="text-[13px] text-gray-1 mb-7">Fundação da Tribo Ágil</p>
             <div className="grid grid-cols-2 gap-0.5 bg-primary/[0.08] rounded-xl overflow-hidden border border-primary/10 mb-6">
               {[
-                { n: "+120", l: "Profissionais\ntreinados" },
-                { n: "+40", l: "Empresas\natendidas" },
+                { n: "+200", l: "Profissionais\ntreinados" },
+                { n: "+30", l: "Empresas\natendidas" },
                 { n: "+95%", l: "Taxa de\nsatisfação" },
                 { n: "4.9", l: "Avaliação\nmédia" },
               ].map((s) => (

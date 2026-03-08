@@ -5,7 +5,7 @@ const WhatsAppFloat = () => (
     href={whatsappLink(WA_MESSAGES.general)}
     target="_blank"
     rel="noopener noreferrer"
-    className="fixed bottom-7 right-7 z-50 w-[58px] h-[58px] rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center shadow-[0_6px_24px_rgba(37,211,102,0.45)] hover:scale-110 hover:shadow-[0_10px_32px_rgba(37,211,102,0.6)] transition-all"
+    className="fixed bottom-7 right-7 z-50 w-[58px] h-[58px] rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center animate-wa-pulse hover:scale-110 transition-transform duration-[250ms]"
     aria-label="Falar no WhatsApp"
   >
     <svg width="28" height="28" viewBox="0 0 24 24" fill="white">

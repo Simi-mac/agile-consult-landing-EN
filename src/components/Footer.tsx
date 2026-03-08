@@ -17,7 +17,7 @@ const Footer = () => (
             Transformando pessoas e organizações com agilidade, colaboração e propósito desde 2020.
           </p>
           <div className="flex flex-col gap-2 mb-5">
-            <a href="mailto:triboagilconsultoria@gmail.com" className="flex items-center gap-2 text-[13px] text-gray-2 hover:text-teal-light transition-colors">
+            <a href="mailto:triboagilconsultoria@gmail.com" className="flex items-center gap-2 text-[13px] text-gray-2 hover:text-teal-light transition-colors duration-200">
               <Mail size={14} /> triboagilconsultoria@gmail.com
             </a>
           </div>
@@ -31,7 +31,7 @@ const Footer = () => (
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-foreground/[0.045] border border-foreground/[0.07] flex items-center justify-center text-gray-2 hover:bg-primary/10 hover:border-primary/25 hover:text-teal-light transition-all"
+                className="w-9 h-9 rounded-lg bg-foreground/[0.045] border border-foreground/[0.07] flex items-center justify-center text-gray-2 hover:bg-primary/10 hover:border-primary/25 hover:text-teal-light transition-all duration-[220ms]"
               >
                 <s.icon size={16} />
               </a>
@@ -44,7 +44,7 @@ const Footer = () => (
           <ul className="flex flex-col gap-3">
             {["Academia Tribo Ágil", "Treinamentos Presenciais", "Mentorias", "Consultoria"].map((l) => (
               <li key={l}>
-                <a href="#servicos" className="text-[13.5px] text-gray-2 hover:text-teal-light transition-colors">{l}</a>
+                <a href="#servicos" className="text-[13.5px] text-gray-2 hover:text-teal-light transition-colors duration-200">{l}</a>
               </li>
             ))}
           </ul>
@@ -55,7 +55,7 @@ const Footer = () => (
           <ul className="flex flex-col gap-3">
             {["Sobre", "Metodologia", "Depoimentos", "Contato"].map((l) => (
               <li key={l}>
-                <a href={`#${l.toLowerCase()}`} className="text-[13.5px] text-gray-2 hover:text-teal-light transition-colors">{l}</a>
+                <a href={`#${l.toLowerCase()}`} className="text-[13.5px] text-gray-2 hover:text-teal-light transition-colors duration-200">{l}</a>
               </li>
             ))}
           </ul>

@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 
 const steps = [
@@ -40,8 +39,24 @@ const ResultBar = ({ bar, inView }: { bar: typeof bars[0]; inView: boolean }) =>
 const MethodologySection = () => {
   const left = useReveal();
   const right = useReveal();
-  const barRef = useRef(null);
-  const barsInView = useInView(barRef, { once: true });
+  const barRef = useRef<HTMLDivElement>(null);
+  const [barsInView, setBarsInView] = useState(false);
+
+  useEffect(() => {
+    const el = barRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBarsInView(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="metodologia" className="py-24 bg-background relative overflow-hidden">

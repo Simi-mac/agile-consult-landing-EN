@@ -9,7 +9,7 @@ const services = [
     icon: BookOpen,
     title: "Academia",
     highlight: "Tribo Ágil",
-    desc: "Plataforma online com formações práticas em Agilidade, Scrum, Kanban, Design Thinking, Métricas Ágeis, OKR, Discovery e muito mais.",
+    desc: "Aprenda métodos ágeis na prática e aplique imediatamente na sua empresa.",
     items: ["Cursos online práticos e aplicáveis", "Conteúdo atualizado por especialistas", "Certificações e trilhas de aprendizado", "Comunidade e networking ativo"],
     cta: "Acessar a Academia",
     waMessage: WA_MESSAGES.academia,
@@ -22,7 +22,7 @@ const services = [
     title: "Treinamentos",
     highlight: "Presenciais",
     subtitle: "Personalizados",
-    desc: "Aulas presenciais adaptadas à realidade da sua equipe, com foco prático e aplicabilidade imediata.",
+    desc: "Capacite sua equipe para trabalhar com mais clareza, autonomia e colaboração.",
     items: ["Scrum, Kanban e Lean para equipes", "Liderança Ágil e Gestão de Times", "OKRs — definição, alinhamento e execução", "Design Thinking e Inovação"],
     cta: "Solicitar proposta",
     waMessage: WA_MESSAGES.treinamento,
@@ -35,7 +35,7 @@ const services = [
     title: "Mentorias",
     highlight: "Individuais",
     subtitle: "e em Grupo",
-    desc: "Para Product Managers, Product Owners, Scrum Masters, Agile Coaches e lideranças que precisam de orientação estratégica.",
+    desc: "Acompanhamento estratégico para líderes que querem estruturar gestão e crescer com previsibilidade.",
     items: ["Mentoria 1-a-1 com especialistas sênior", "Grupos de mentoria temáticos", "Desenvolvimento de liderança ágil", "Carreira em agilidade (PM, PO, SM, Coach)"],
     cta: "Quero ser mentorado",
     waMessage: WA_MESSAGES.mentoria,
@@ -47,7 +47,7 @@ const services = [
     icon: BarChart3,
     title: "Consultoria",
     highlight: "Organizacional",
-    desc: "Diagnóstico profundo, identificação de pontos críticos e construção de um plano de ação prático, alinhado com os objetivos da empresa.",
+    desc: "Estruturamos processos, rituais e gestão para transformar sua empresa em uma operação eficiente.",
     items: ["Diagnóstico organizacional completo", "Identificação de gargalos e pontos críticos", "Transformação ágil em escala (SAFe, LeSS)", "Plano de ação prático e acompanhado"],
     cta: "Solicitar diagnóstico",
     waMessage: WA_MESSAGES.consultoria,
@@ -85,7 +85,6 @@ const ServicesSection = () => (
                 : "border-foreground/[0.055] hover:border-primary/15 hover:shadow-[0_22px_56px_rgba(0,0,0,0.28),0_0_36px_hsl(var(--teal)/0.07)]"
             }`}
           >
-            {/* Top line */}
             <div
               className={`absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity ${
                 s.gold
@@ -94,7 +93,6 @@ const ServicesSection = () => (
               }`}
             />
 
-            {/* Number watermark */}
             <span
               className={`absolute top-7 right-7 font-display text-[42px] font-extrabold tracking-[-2px] leading-none opacity-[0.06] ${
                 s.gold ? "text-secondary" : "text-teal-light"

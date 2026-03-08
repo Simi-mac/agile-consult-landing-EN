@@ -1,11 +1,11 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 
 const steps = [
-  { num: "01", title: "Diagnóstico Profundo", desc: "Mapeamos processos, pessoas, estratégia e cultura — identificando pontos críticos e oportunidades de alto impacto." },
-  { num: "02", title: "Plano de Transformação", desc: "Construímos um roadmap personalizado com iniciativas priorizadas, OKRs definidos e marcos claros." },
-  { num: "03", title: "Execução Acompanhada", desc: "Implementamos lado a lado com a equipe, garantindo transferência real de conhecimento." },
-  { num: "04", title: "Mensuração e Evolução", desc: "Medimos com indicadores concretos, aprendemos com os dados e ajustamos continuamente." },
+  { num: "01", title: "Diagnóstico do negócio", desc: "Mapeamos processos, pessoas, estratégia e cultura — identificando pontos críticos e oportunidades de alto impacto." },
+  { num: "02", title: "Plano de transformação", desc: "Construímos um roadmap personalizado com iniciativas priorizadas, OKRs definidos e marcos claros." },
+  { num: "03", title: "Implementação com sua equipe", desc: "Implementamos lado a lado com a equipe, garantindo transferência real de conhecimento." },
+  { num: "04", title: "Resultados medidos", desc: "Medimos com indicadores concretos, aprendemos com os dados e ajustamos continuamente." },
 ];
 
 const bars = [
@@ -52,10 +52,10 @@ const MethodologySection = () => {
               Nossa Metodologia
             </span>
             <h2 className="font-display font-extrabold text-[clamp(1.9rem,3.5vw,2.8rem)] tracking-[-1.5px] leading-[1.08] mb-4">
-              Do diagnóstico ao<br /><span className="text-primary">resultado medido</span>
+              Como organizamos sua empresa em <span className="text-primary">4 etapas</span>
             </h2>
             <p className="text-[15px] text-gray-1 leading-relaxed mb-10">
-              Seguimos um processo estruturado em quatro etapas que garante consistência, aprendizado contínuo e entrega de valor real.
+              Seguimos um processo estruturado que garante consistência, aprendizado contínuo e entrega de valor real.
             </p>
             <div className="flex flex-col">
               {steps.map((s) => (

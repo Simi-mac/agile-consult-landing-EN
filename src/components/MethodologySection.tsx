@@ -1,5 +1,6 @@
-import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useInView } from "framer-motion";
+import { useReveal } from "@/hooks/use-reveal";
 
 const steps = [
   { num: "01", title: "Diagnóstico do negócio", desc: "Mapeamos processos, pessoas, estratégia e cultura — identificando pontos críticos e oportunidades de alto impacto." },
@@ -24,30 +25,30 @@ const ResultBar = ({ bar, inView }: { bar: typeof bars[0]; inView: boolean }) =>
     </div>
     <div className="h-[7px] bg-foreground/5 rounded-full overflow-hidden">
       <div
-        className={`h-full rounded-full transition-transform duration-[1.3s] ease-out origin-left ${
+        className={`h-full rounded-full origin-left ${
           bar.gold ? "bg-gradient-to-r from-gold-dark to-gold-light" : "bg-gradient-to-r from-primary to-teal-light"
         }`}
-        style={{ transform: inView ? `scaleX(${bar.width / 100})` : "scaleX(0)" }}
+        style={{
+          transform: inView ? `scaleX(${bar.width / 100})` : "scaleX(0)",
+          transition: "transform 1.4s cubic-bezier(.16,1,.3,1)",
+        }}
       />
     </div>
   </div>
 );
 
 const MethodologySection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const left = useReveal();
+  const right = useReveal();
+  const barRef = useRef(null);
+  const barsInView = useInView(barRef, { once: true });
 
   return (
     <section id="metodologia" className="py-24 bg-background relative overflow-hidden">
       <div className="absolute -bottom-48 -right-48 w-[550px] h-[550px] rounded-full bg-primary/[0.04] pointer-events-none" />
       <div className="container">
         <div className="grid md:grid-cols-2 gap-24 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
+          <div ref={left.ref} className={`rv-l ${left.visible ? "visible" : ""}`}>
             <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-teal-light mb-5">
               Nossa Metodologia
             </span>
@@ -60,7 +61,7 @@ const MethodologySection = () => {
             <div className="flex flex-col">
               {steps.map((s) => (
                 <div key={s.num} className="group flex gap-5 py-6 border-b border-foreground/5 last:border-b-0">
-                  <div className="flex-shrink-0 w-[46px] h-[46px] rounded-[11px] bg-primary/10 border-[1.5px] border-primary/25 flex items-center justify-center font-display text-[17px] font-extrabold text-teal-light group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all">
+                  <div className="flex-shrink-0 w-[46px] h-[46px] rounded-[11px] bg-primary/10 border-[1.5px] border-primary/25 flex items-center justify-center font-display text-[17px] font-extrabold text-teal-light group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300">
                     {s.num}
                   </div>
                   <div>
@@ -70,28 +71,22 @@ const MethodologySection = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: 36 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="bg-gradient-to-br from-dark-3 to-dark-4 border border-primary/10 rounded-2xl p-10 shadow-[0_36px_72px_rgba(0,0,0,0.38)] relative overflow-hidden">
+          <div ref={right.ref} className={`rv-r ${right.visible ? "visible" : ""}`}>
+            <div ref={barRef} className="bg-gradient-to-br from-dark-3 to-dark-4 border border-primary/10 rounded-2xl p-10 shadow-[0_36px_72px_rgba(0,0,0,0.38)] relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,hsl(var(--teal)/0.07),transparent_58%)] pointer-events-none" />
               <h3 className="font-display text-[22px] font-extrabold mb-7 relative">Resultados Médios dos Projetos</h3>
               <div className="flex flex-col gap-5 relative">
                 {bars.map((bar) => (
-                  <ResultBar key={bar.label} bar={bar} inView={isInView} />
+                  <ResultBar key={bar.label} bar={bar} inView={barsInView} />
                 ))}
               </div>
               <div className="mt-7 p-4 bg-primary/5 rounded-xl border border-primary/10 text-[12.5px] text-gray-2 leading-relaxed relative">
                 <strong className="text-teal-light">Metodologia Tribo Ágil:</strong> combinamos Scrum, Kanban, OKRs, Design Thinking e SAFe com contexto real brasileiro e foco absoluto em implementação prática.
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

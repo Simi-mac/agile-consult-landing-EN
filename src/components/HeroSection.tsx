@@ -19,7 +19,7 @@ const trianglePositions = [
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[80vh] min-h-[560px] flex items-center pt-24 pb-12 overflow-hidden">
+    <section className="relative h-[80vh] min-h-[560px] flex items-center pt-24 pb-12">
       {/* Background layers */}
       <div className="absolute inset-0 z-0">
         <div
@@ -58,10 +58,10 @@ const HeroSection = () => {
       ))}
 
       {/* Glow blobs */}
-      <div className="absolute top-[10%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] animate-pulse-scale" />
-      <div className="absolute bottom-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-secondary/5 blur-[80px] animate-pulse-scale" style={{ animationDelay: "2.5s" }} />
+      <div className="absolute top-[10%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/5 blur-[100px] animate-pulse-scale" style={{ willChange: "transform", transform: "translateZ(0)" }} />
+      <div className="absolute bottom-[20%] left-[10%] w-[300px] h-[300px] rounded-full bg-secondary/5 blur-[80px] animate-pulse-scale" style={{ animationDelay: "2.5s", willChange: "transform", transform: "translateZ(0)" }} />
 
-      <div className="container relative z-10">
+      <div className="container relative z-10" style={{ isolation: "isolate" }}>
         <div className="max-w-3xl">
           <div
             className="animate-fade-up"
@@ -128,11 +128,11 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 scale-75 md:scale-100">
-        <div className="scroll-mouse animate-scroll-float" aria-hidden>
-          <span className="scroll-dot" />
-        </div>
-        <span className="text-[11px] text-gray-2 tracking-[2px] uppercase">Scroll</span>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer" onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}>
+        <span className="text-[10px] text-gray-2 tracking-[2.5px] uppercase font-medium">Scroll</span>
+        <svg className="w-5 h-5 text-primary animate-bounce" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" stroke="currentColor">
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
       </div>
     </section>
   );

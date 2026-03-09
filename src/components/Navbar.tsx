@@ -14,9 +14,9 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-foreground/10 shadow-sm py-3" : "py-5"
+        scrolled ? "border-b border-foreground/10 shadow-sm py-2" : "py-4"
       }`}
-      style={{ background: "rgba(245,241,236,0.92)", backdropFilter: "blur(12px)" }}
+      style={{ background: "rgba(245,241,236,0.97)" }}
     >
       <div className="container mx-auto flex items-center justify-between px-8">
         {/* Left: logo only */}
@@ -30,7 +30,7 @@ const Navbar = () => {
         </a>
 
         {/* Center: main menu (hidden on small screens) */}
-        <div className="hidden md:flex items-center gap-8 justify-center">
+        <div className="hidden md:flex items-center gap-7 justify-center">
           <a href="#sobre" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Sobre</a>
           <a href="#servicos" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Serviços</a>
           <a href="#metodologia" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Metodologia</a>

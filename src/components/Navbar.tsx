@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "border-b border-foreground/10 shadow-sm py-2" : "py-4"
+        scrolled ? "border-b border-foreground/10 shadow-sm py-1.5" : "py-3"
       }`}
       style={{ background: "rgba(245,241,236,0.97)" }}
     >
@@ -24,7 +24,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Tribo Ágil"
-            className="h-[76px] w-auto rounded-lg object-contain filter"
+            className="h-[56px] w-auto rounded-lg object-contain filter"
             style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.12))" }}
           />
         </a>

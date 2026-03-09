@@ -17,8 +17,8 @@ Este documento lista as integrações técnicas planejadas ou recomendadas para 
 
 ## 3. Open Graph / Social Previews
 - Objetivo: controlar previews em redes sociais (LinkedIn, WhatsApp, Twitter).
-- Implementação: gerar `og:image` em `/public` (preferir PNG 1200x630 para compatibilidade), inserir `og:title`, `og:description`, `og:image`, `og:url`, `og:image:width` e `og:image:height` no `index.html`.
-- Arquivos relacionados: `index.html`, `public/og-image.png` (ou `og-image.svg` como placeholder).
+- Implementação: definir `og:image` apontando para uma imagem estática do projeto (ex.: `src/assets/logo-fundo-branco.jpeg` ou `/public/og-image.jpg`). Prefira PNG/JPEG 1200x630 para melhor compatibilidade em todas as plataformas. Inserir também `og:title`, `og:description`, `og:image`, `og:url`, `og:image:width` e `og:image:height` no `index.html`.
+- Arquivos relacionados: `index.html`, preferencialmente `public/og-image.png` ou `public/og-image.jpg` (ou usar `src/assets/logo-fundo-branco.jpeg` como placeholder durante o desenvolvimento).
 - Checklist: preview correto ao compartilhar em LinkedIn e WhatsApp.
 
 ## 4. WhatsApp / Contact Links

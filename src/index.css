@@ -112,6 +112,41 @@
   }
 }
 
+@layer utilities {
+  .scroll-mouse {
+    width: 30px;
+    height: 46px;
+    border-radius: 20px;
+    border: 2px solid hsl(var(--teal) / 0.65);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    background: transparent;
+    box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  }
+
+  .scroll-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: hsl(var(--teal));
+    display: block;
+    transform: translateY(0);
+    animation: scroll-dot 1.6s infinite cubic-bezier(.4,0,.2,1);
+  }
+
+  @keyframes scroll-dot {
+    0% { transform: translateY(-2px); opacity: 1; }
+    50% { transform: translateY(12px); opacity: 0.45; }
+    100% { transform: translateY(-2px); opacity: 1; }
+  }
+
+  /* Optional subtle float for the whole indicator */
+  .animate-scroll-float { animation: float-small 3.6s infinite ease-in-out; }
+  @keyframes float-small { 0% { transform: translateY(0);} 50% { transform: translateY(-6px);} 100% { transform: translateY(0);} }
+}
+
 /* Noise overlay */
 body::before {
   content: '';

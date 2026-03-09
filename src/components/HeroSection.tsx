@@ -128,9 +128,11 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-scroll-float">
-        <span className="text-[10px] text-gray-1 tracking-[2px] uppercase">Scroll</span>
-        <div className="w-px h-9 bg-gradient-to-b from-teal-light to-transparent" />
+      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="scroll-mouse animate-scroll-float" aria-hidden>
+          <span className="scroll-dot" />
+        </div>
+        <span className="text-[11px] text-gray-2 tracking-[2px] uppercase">Scroll</span>
       </div>
     </section>
   );

@@ -24,7 +24,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Tribo Ágil"
-            className="h-[56px] w-auto rounded-lg object-contain filter"
+            className="h-[48px] md:h-[56px] w-auto rounded-lg object-contain filter"
             style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.12))" }}
           />
         </a>

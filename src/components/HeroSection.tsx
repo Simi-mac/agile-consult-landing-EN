@@ -19,7 +19,7 @@ const trianglePositions = [
 
 const HeroSection = () => {
   return (
-    <section className="relative h-[80vh] min-h-[560px] flex items-center pt-28 pb-12">
+    <section className="relative flex items-center min-h-[100svh] sm:min-h-[600px] md:h-[80vh] md:min-h-[560px] pt-24 sm:pt-24 md:pt-28 pb-12">
       {/* Background layers */}
       <div className="absolute inset-0 z-0">
         <div
@@ -127,13 +127,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity cursor-pointer" onClick={() => document.getElementById('servicos')?.scrollIntoView({ behavior: 'smooth' })}>
-        <span className="text-[10px] text-gray-2 tracking-[2.5px] uppercase font-medium">Scroll</span>
-        <svg className="w-5 h-5 text-primary animate-bounce" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" viewBox="0 0 24 24" stroke="currentColor">
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </div>
     </section>
   );
 };

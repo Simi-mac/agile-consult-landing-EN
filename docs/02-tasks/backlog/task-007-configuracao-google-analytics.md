@@ -1,8 +1,8 @@
 ```markdown
-# Task 005 - Configuração do Google Analytics (GA4)
+# Task 007 - Configuração do Google Analytics (GA4)
 
 Status:
-Backlog
+✅ Concluída
 
 Tipo:
 Integração / Telemetria
@@ -26,11 +26,17 @@ Critérios de aceite:
 - GA4 ativo (propriedade criada e configuração disponível)
 - page_view registrado em tempo real no painel do GA4
 
-Arquivos possivelmente impactados:
-- `index.html`
-- `src/main.tsx` (se optar por inicializar via JS)
+Arquivos impactados:
+- `index.html` - adicionado script do GA4 no `<head>`
+
+Implementação realizada:
+- ✅ Script GA4 adicionado ao `index.html` com ID: `G-T36JXG1HSY`
+- ✅ Código inserido no início do `<head>` para garantir carregamento prioritário
+- ✅ Configuração básica de page_view ativa
 
 Observações:
-- Se cliente preferir, usar Google Tag Manager para facilitar gestão futura.
+- Script configurado diretamente no HTML (sem Google Tag Manager)
+- O tracking será ativado automaticamente em todas as páginas
+- Verifique no painel do GA4 em "Tempo Real" se os eventos estão sendo registrados
 
 ``` 

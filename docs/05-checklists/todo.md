@@ -2,10 +2,10 @@
 
 Itens pendentes do projeto (prioridade alta → baixa):
 
-- Remover/atualizar favicon e arquivos de logo em `public/` e `src/assets/`
-- Executar `npm install` para atualizar lockfiles e remover dependências residuais
-- Validar layout e conteúdo com o cliente (Task 002)
- - Validar layout e conteúdo com o cliente (Task 002)
+✅ Remover/atualizar favicon e arquivos de logo em `public/` e `src/assets/`
+✅ Executar `npm install` para atualizar lockfiles e remover dependências residuais
+✅ Validar layout e conteúdo com o cliente (Task 002)
+✅ Validar layout e conteúdo com o cliente (Task 002)
 - Configurar SEO básico (Task 003)
 - Integrar Google Analytics (Task 004)
 - Configurar Open Graph (Task 005)

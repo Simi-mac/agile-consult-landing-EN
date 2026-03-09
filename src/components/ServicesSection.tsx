@@ -23,7 +23,7 @@ const services = [
     highlight: "Individuais",
     subtitle: "e em Grupo",
     desc: "Acompanhamento estratégico para líderes que querem estruturar gestão e crescer com previsibilidade.",
-    items: ["Mentoria 1-a-1 com especialistas sênior", "Grupos de mentoria temáticos", "Desenvolvimento de liderança ágil", "Carreira em agilidade (PM, PO, SM, Coach)"],
+    items: ["Mentoria 1-a-1 com especialistas", "Grupos de mentoria temáticos", "Desenvolvimento de liderança ágil", "Carreira em agilidade (PM, PO, SM, Coach)"],
     cta: "Quero ser mentorado",
     waMessage: WA_MESSAGES.mentoria,
     gold: false,

@@ -1,4 +1,5 @@
-# Task 003 - Configuração de SEO básico
+```markdown
+# Task 004 - Configuração de SEO básico
 
 Status:
 Backlog
@@ -35,3 +36,5 @@ Arquivos possivelmente impactados:
 
 Observações:
 - Evitar keyword stuffing; priorizar UX e clareza para leitores humanos e buscadores.
+
+``` 

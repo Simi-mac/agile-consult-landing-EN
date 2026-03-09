@@ -1,4 +1,5 @@
-# Task 004 - Configuração do Google Analytics (GA4)
+```markdown
+# Task 005 - Configuração do Google Analytics (GA4)
 
 Status:
 Backlog
@@ -31,3 +32,5 @@ Arquivos possivelmente impactados:
 
 Observações:
 - Se cliente preferir, usar Google Tag Manager para facilitar gestão futura.
+
+``` 

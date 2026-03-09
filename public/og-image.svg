@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#0ea5a4"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#f8faf9" />
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="url(#g)" opacity="0.08" />
+
+  <g transform="translate(120,150)">
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="44" fill="#0f172a" font-weight="700">Tribo Ágil</text>
+    <text x="0" y="64" font-family="Inter, Arial, sans-serif" font-size="20" fill="#334155">Consultoria • Treinamentos • Mentoria</text>
+
+    <rect x="0" y="110" width="420" height="4" rx="2" fill="#06b6d4" opacity="0.9" />
+  </g>
+
+  <g transform="translate(760,120)">
+    <text x="0" y="0" font-family="Inter, Arial, sans-serif" font-size="18" fill="#0f172a" opacity="0.6">Tribo Ágil — Transformando com propósito desde 2020</text>
+  </g>
+</svg>

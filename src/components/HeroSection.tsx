@@ -1,11 +1,11 @@
 import { CheckCircle } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-photo.png";
 import { whatsappLink, WA_MESSAGES } from "@/lib/whatsapp";
 
 const chips = [
   { text: "Estrutura de processos" },
   { text: "Equipes alinhadas" },
-  { text: "Decisões mais rápidas" },
+  { text: "Resultados mensuráveis" },
 ];
 
 const trianglePositions = [
@@ -23,7 +23,7 @@ const HeroSection = () => {
       {/* Background layers */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-20 animate-fade-in"
+          className="absolute inset-0 bg-cover bg-center opacity-30 animate-fade-in"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background" />

@@ -6,50 +6,58 @@
 
 @layer base {
   :root {
-    --background: 210 33% 4%;
-    --foreground: 0 0% 100%;
+    /* Base — fundo quente off-white #F5F1EC */
+    --background: 33 30% 94%;
+    --foreground: 224 38% 16%;
 
-    --card: 210 30% 7%;
-    --card-foreground: 0 0% 100%;
+    /* Cards — branco puro para contraste sobre seções */
+    --card: 0 0% 100%;
+    --card-foreground: 224 38% 16%;
 
-    --popover: 210 30% 7%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 38% 16%;
 
-    --primary: 177 100% 35%;
-    --primary-foreground: 210 33% 4%;
+    /* Teal aprofundado para manter contraste AA em fundo claro */
+    --primary: 177 90% 26%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 37 91% 55%;
-    --secondary-foreground: 210 33% 4%;
+    /* Gold aprofundado para contraste em fundo claro */
+    --secondary: 37 88% 38%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 25% 12%;
-    --muted-foreground: 205 25% 60%;
+    --muted: 33 18% 88%;
+    --muted-foreground: 220 14% 48%;
 
-    --accent: 210 20% 16%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 33 16% 85%;
+    --accent-foreground: 224 38% 16%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84% 52%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 14%;
-    --input: 210 20% 14%;
-    --ring: 177 100% 35%;
+    --border: 33 14% 82%;
+    --input: 33 14% 82%;
+    --ring: 177 90% 26%;
 
     --radius: 0.75rem;
 
-    /* Custom tokens */
-    --teal: 177 100% 35%;
-    --teal-light: 174 77% 45%;
-    --teal-dark: 174 100% 24%;
-    --gold: 37 91% 55%;
-    --gold-light: 40 100% 60%;
-    --gold-dark: 37 88% 40%;
-    --dark-2: 210 30% 9%;
-    --dark-3: 210 28% 14%;
-    --dark-4: 210 25% 18%;
-    --dark-5: 210 22% 24%;
-    --gray-1: 205 20% 47%;
-    --gray-2: 205 22% 64%;
-    --gray-3: 205 28% 78%;
+    /* Paleta — teal e gold ajustados para fundo claro */
+    --teal: 177 90% 26%;
+    --teal-light: 174 72% 34%;
+    --teal-dark: 174 90% 18%;
+    --gold: 37 88% 38%;
+    --gold-light: 40 90% 48%;
+    --gold-dark: 37 82% 28%;
+
+    /* Superfícies — dark-* reaproveitados como camadas de luz */
+    --dark-2: 33 22% 90%;   /* seção alternada */
+    --dark-3: 0 0% 100%;    /* superfície card */
+    --dark-4: 33 16% 85%;   /* hover / sutil */
+    --dark-5: 33 12% 76%;   /* borda mais forte */
+
+    /* Escala de texto */
+    --gray-1: 220 12% 52%;  /* muted */
+    --gray-2: 220 16% 36%;  /* corpo */
+    --gray-3: 220 25% 22%;  /* ênfase */
 
     --font-display: 'Sora', sans-serif;
     --font-body: 'DM Sans', sans-serif;
@@ -111,7 +119,7 @@ body::before {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.025;
+  opacity: 0.012;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px;
 }

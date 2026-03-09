@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import logo from "@/assets/logo-triboagil.png";
+import logo from "@/assets/logo-fundo-transparente.png";
 import { whatsappLink, WA_MESSAGES } from "@/lib/whatsapp";
 
 const Navbar = () => {
@@ -15,25 +14,30 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/93 backdrop-blur-xl border-b border-primary/10 py-3"
-          : "py-5"
+        scrolled ? "border-b border-foreground/10 shadow-sm py-3" : "py-5"
       }`}
+      style={{ background: "rgba(245,241,236,0.92)", backdropFilter: "blur(12px)" }}
     >
-      <div className="container mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center gap-3">
-          <img src={logo} alt="Tribo Ágil" className="w-10 h-10 rounded-lg object-contain" />
-          <span className="font-display font-extrabold text-lg">
-            <span className="text-secondary">Tribo</span>
-            <span className="text-primary">Ágil</span>
-          </span>
+      <div className="container mx-auto flex items-center justify-between px-8">
+        {/* Left: logo only */}
+        <a href="#" className="flex items-center">
+          <img
+            src={logo}
+            alt="Tribo Ágil"
+            className="h-[76px] w-auto rounded-lg object-contain filter"
+            style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.12))" }}
+          />
         </a>
 
-        <div className="hidden md:flex items-center gap-8">
+        {/* Center: main menu (hidden on small screens) */}
+        <div className="hidden md:flex items-center gap-8 justify-center">
           <a href="#sobre" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Sobre</a>
           <a href="#servicos" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Serviços</a>
           <a href="#metodologia" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Metodologia</a>
-          <a href="#depoimentos" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Depoimentos</a>
+        </div>
+
+        {/* Right: CTA (hidden on small screens) */}
+        <div className="hidden md:flex items-center">
           <a
             href={whatsappLink(WA_MESSAGES.general)}
             target="_blank"
@@ -46,6 +50,7 @@ const Navbar = () => {
       </div>
     </nav>
   );
-};
 
-export default Navbar;
+  };
+
+  export default Navbar;

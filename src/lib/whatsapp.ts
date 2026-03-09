@@ -1,4 +1,5 @@
-const WHATSAPP_NUMBER = "5541999999999";
+// Número WhatsApp com código do país (BR = 55). Formato: 55 + DDD + número
+const WHATSAPP_NUMBER = "55" + "41999484680"; // 41999484680 -> +55 41 99948-4680
 
 export const whatsappLink = (message: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

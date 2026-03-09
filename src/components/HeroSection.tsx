@@ -1,5 +1,5 @@
 import { CheckCircle } from "lucide-react";
-import heroBg from "@/assets/hero-photo.png";
+import heroBg from "@/assets/hero-photo.webp";
 import { whatsappLink, WA_MESSAGES } from "@/lib/whatsapp";
 
 const chips = [
@@ -128,7 +128,7 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 scale-75 md:scale-100">
         <div className="scroll-mouse animate-scroll-float" aria-hidden>
           <span className="scroll-dot" />
         </div>

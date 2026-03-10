@@ -8,30 +8,49 @@ const steps = [
   { num: "04", title: "Resultados medidos", desc: "Medimos com indicadores concretos, aprendemos com os dados e ajustamos continuamente." },
 ];
 
-const bars = [
-  { label: "Eficiência operacional", value: "+68%", width: 68, gold: false },
-  { label: "Engajamento de equipes", value: "+55%", width: 55, gold: false },
-  { label: "Redução de lead time", value: "-40%", width: 40, gold: true },
-  { label: "Crescimento de receita", value: "+35%", width: 35, gold: true },
-  { label: "Satisfação do cliente final", value: "+42%", width: 42, gold: false },
+type Bar = {
+  label: string;
+  value: string;
+  width: number;
+  highlight?: boolean;
+};
+
+const bars: Bar[] = [
+  { label: "Eficiência operacional aumentou em média", value: "68%", width: 68 },
+  { label: "Engajamento de equipes aumentou em média", value: "55%", width: 55 },
+  { label: "Lead time reduzido em até", value: "40% mais rápido", width: 40, highlight: true },
+  { label: "Receita cresceu em média", value: "35%", width: 35, highlight: true },
+  { label: "Satisfação do cliente aumentou em média", value: "42%", width: 42 },
 ];
 
-const ResultBar = ({ bar, inView }: { bar: typeof bars[0]; inView: boolean }) => (
+const ResultBar = ({ bar, inView }: { bar: Bar; inView: boolean }) => (
   <div>
-    <div className="flex justify-between mb-1.5 text-[12.5px]">
-      <span className="text-gray-2 font-medium">{bar.label}</span>
-      <span className={`font-bold ${bar.gold ? "text-gold-light" : "text-teal-light"}`}>{bar.value}</span>
+    <div className="flex justify-between mb-2 text-[14px]">
+      <span className="text-foreground font-normal">{bar.label}</span>
+      <span className="font-semibold" style={{ color: '#1a9e8f' }}>
+        {bar.value}
+      </span>
     </div>
-    <div className="h-[7px] bg-foreground/5 rounded-full overflow-hidden">
-      <div
-        className={`h-full rounded-full origin-left ${
-          bar.gold ? "bg-gradient-to-r from-gold-dark to-gold-light" : "bg-gradient-to-r from-primary to-teal-light"
-        }`}
-        style={{
-          transform: inView ? `scaleX(${bar.width / 100})` : "scaleX(0)",
-          transition: "transform 1.4s cubic-bezier(.16,1,.3,1)",
-        }}
-      />
+    <div className="h-1.5 bg-gray-300/50 rounded-full overflow-hidden">
+      {bar.highlight ? (
+        <div
+          className="h-full rounded-full"
+          style={{
+            width: inView ? `${bar.width}%` : '0%',
+            background: 'linear-gradient(90deg, #1a9e8f 0%, #a8ddd7 100%)',
+            transition: "width 1.4s cubic-bezier(.16,1,.3,1)",
+          }}
+        />
+      ) : (
+        <div
+          className="h-full rounded-full origin-left"
+          style={{
+            transform: inView ? `scaleX(${bar.width / 100})` : "scaleX(0)",
+            transition: "transform 1.4s cubic-bezier(.16,1,.3,1)",
+            backgroundColor: '#1a9e8f',
+          }}
+        />
+      )}
     </div>
   </div>
 );
@@ -59,7 +78,7 @@ const MethodologySection = () => {
   }, []);
 
   return (
-    <section id="metodologia" className="py-24 bg-background relative overflow-hidden">
+    <section id="metodologia" className="py-16 bg-background relative overflow-hidden">
       <div className="absolute -bottom-48 -right-48 w-[550px] h-[550px] rounded-full bg-primary/[0.04] pointer-events-none" />
       <div className="container">
         <div className="grid md:grid-cols-2 gap-24 items-center">
@@ -67,16 +86,16 @@ const MethodologySection = () => {
             <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-teal-light mb-5">
               Nossa Metodologia
             </span>
-            <h2 className="font-display font-extrabold text-[clamp(1.9rem,3.5vw,2.8rem)] tracking-[-1.5px] leading-[1.08] mb-4">
+            <h2 className="font-display font-extrabold text-[clamp(1.55rem,2.8vw,2.2rem)] tracking-[-1.5px] leading-[1.08] mb-3">
               Como organizamos sua empresa em <span className="text-primary">4 etapas</span>
             </h2>
-            <p className="text-[15px] text-gray-1 leading-relaxed mb-10">
+            <p className="text-[14px] text-gray-1 leading-relaxed mb-7">
               Seguimos um processo estruturado que garante consistência, aprendizado contínuo e entrega de valor real.
             </p>
             <div className="flex flex-col">
               {steps.map((s) => (
-                <div key={s.num} className="group flex gap-5 py-6 border-b border-foreground/5 last:border-b-0">
-                  <div className="flex-shrink-0 w-[46px] h-[46px] rounded-[11px] bg-primary/10 border-[1.5px] border-primary/25 flex items-center justify-center font-display text-[17px] font-extrabold text-teal-light group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300">
+                <div key={s.num} className="group flex gap-4 py-4 border-b border-foreground/5 last:border-b-0">
+                  <div className="flex-shrink-0 w-[38px] h-[38px] rounded-[9px] bg-primary/10 border-[1.5px] border-primary/25 flex items-center justify-center font-display text-[15px] font-extrabold text-teal-light group-hover:bg-primary group-hover:border-primary group-hover:text-primary-foreground transition-all duration-300">
                     {s.num}
                   </div>
                   <div>
@@ -89,17 +108,19 @@ const MethodologySection = () => {
           </div>
 
           <div ref={right.ref} className={`rv-r ${right.visible ? "visible" : ""}`}>
-            <div ref={barRef} className="bg-gradient-to-br from-dark-3 to-dark-4 border border-primary/10 rounded-2xl p-10 shadow-[0_36px_72px_rgba(0,0,0,0.38)] relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,hsl(var(--teal)/0.07),transparent_58%)] pointer-events-none" />
-              <h3 className="font-display text-[22px] font-extrabold mb-7 relative">Resultados Médios dos Projetos</h3>
+            <div ref={barRef} className="bg-white border border-gray-200 rounded-3xl p-8 shadow-lg relative overflow-hidden">
+              <h3 className="font-display text-[22px] font-bold mb-7 text-dark-1 relative">Resultados Médios dos Projetos</h3>
               <div className="flex flex-col gap-5 relative">
                 {bars.map((bar) => (
                   <ResultBar key={bar.label} bar={bar} inView={barsInView} />
                 ))}
               </div>
-              <div className="mt-7 p-4 bg-primary/5 rounded-xl border border-primary/10 text-[12.5px] text-gray-2 leading-relaxed relative">
-                <strong className="text-teal-light">Metodologia Tribo Ágil:</strong> combinamos Scrum, Kanban, OKRs, Design Thinking e SAFe com contexto real brasileiro e foco absoluto em implementação prática.
+              <div className="mt-6 p-4 bg-teal-50 rounded-xl text-[13px] text-gray-700 leading-relaxed relative">
+                <strong className="text-teal-700">Metodologia Tribo Ágil:</strong> combinamos Scrum, Kanban, OKRs, Design Thinking e SAFe com contexto real brasileiro e foco absoluto em implementação prática.
               </div>
+              <p className="mt-4 text-[11px] text-gray-500 text-center leading-relaxed relative">
+                Resultados médios observados em projetos de transformação ágil conduzidos pela Tribo Ágil.
+              </p>
             </div>
           </div>
         </div>

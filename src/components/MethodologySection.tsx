@@ -18,18 +18,16 @@ type Bar = {
 const bars: Bar[] = [
   { label: "Eficiência operacional aumentou em média", value: "68%", width: 68 },
   { label: "Engajamento de equipes aumentou em média", value: "55%", width: 55 },
-  { label: "Lead time reduzido em até", value: "40% mais rápido", width: 40, highlight: true },
+  { label: "Lead time reduzido", value: "40% mais rápido", width: 40, highlight: true },
   { label: "Receita cresceu em média", value: "35%", width: 35, highlight: true },
   { label: "Satisfação do cliente aumentou em média", value: "42%", width: 42 },
 ];
 
 const ResultBar = ({ bar, inView }: { bar: Bar; inView: boolean }) => (
   <div>
-    <div className="flex justify-between mb-2 text-[14px]">
-      <span className="text-foreground font-normal">{bar.label}</span>
-      <span className="font-semibold" style={{ color: '#1a9e8f' }}>
-        {bar.value}
-      </span>
+    <div className="flex justify-between items-center mb-2 text-[14px]">
+      <span className="text-foreground font-normal pr-4">{bar.label}</span>
+      <span className="font-semibold whitespace-nowrap" style={{ color: '#1a9e8f' }}>{bar.value}</span>
     </div>
     <div className="h-1.5 bg-gray-300/50 rounded-full overflow-hidden">
       {bar.highlight ? (

@@ -8,6 +8,38 @@ Este documento descreve os eventos configurados e recomendados para o Google Ana
 - **ID:** `G-T36JXG1HSY`
 - **Localização:** `index.html` (script inserido no `<head>`)
 
+### ✅ Implementação Concluída (2026-03-09)
+
+A camada de analytics foi totalmente implementada com TypeScript em `src/analytics/`:
+
+**Arquivos criados:**
+- ✅ `trackEvent.ts` - Função central com proteções para SSR e gtag undefined
+- ✅ `events.ts` - Helpers específicos para cada tipo de evento
+- ✅ `initScrollTracking.ts` - Tracking de scroll em 50% e 75% (dispara apenas uma vez cada)
+- ✅ `initTimeOnPage.ts` - Tracking de tempo na página (60 segundos)
+- ✅ `useSectionView.ts` - Hook React para tracking de visualização de seções
+- ✅ `index.ts` - Barrel export de todas as funções
+
+**Componentes integrados:**
+- ✅ `HeroSection.tsx` - CTAs "Agendar diagnóstico" e "Conhecer serviços"
+- ✅ `ServicesSection.tsx` - Tracking de visualização + CTAs de cada serviço
+- ✅ `MethodologySection.tsx` - Tracking de visualização da seção
+- ✅ `CtaSection.tsx` - CTA "Agendar conversa estratégica"
+- ✅ `WhatsAppFloat.tsx` - Botão flutuante do WhatsApp
+- ✅ `App.tsx` - Inicialização dos trackers de scroll e tempo
+
+**Eventos implementados:**
+- `cta_agendar_diagnostico` - Hero Section
+- `cta_conhecer_servicos` - Hero Section
+- `cta_agendar_conversa` - CTA Section
+- `whatsapp_click` - WhatsApp Float Button
+- `service_cta_click` - Services Section (Consultoria, Mentoria, Treinamento, Academia)
+- `section_services_view` - Visualização da seção de serviços
+- `section_methodology_view` - Visualização da seção de metodologia
+- `scroll_50` - Scroll até 50% da página
+- `scroll_75` - Scroll até 75% da página
+- `time_on_page_60s` - Tempo na página >= 60 segundos
+
 ### Eventos Automáticos Ativos
 
 O GA4 rastreia automaticamente os seguintes eventos:

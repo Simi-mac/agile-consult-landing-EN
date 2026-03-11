@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
+import { useSectionView } from "@/analytics";
 
 const steps = [
   { num: "01", title: "Diagnóstico do negócio", desc: "Mapeamos processos, pessoas, estratégia e cultura — identificando pontos críticos e oportunidades de alto impacto." },
@@ -58,6 +59,7 @@ const MethodologySection = () => {
   const right = useReveal();
   const barRef = useRef<HTMLDivElement>(null);
   const [barsInView, setBarsInView] = useState(false);
+  const sectionRef = useSectionView('methodology');
 
   useEffect(() => {
     const el = barRef.current;
@@ -76,7 +78,7 @@ const MethodologySection = () => {
   }, []);
 
   return (
-    <section id="metodologia" className="py-16 bg-background relative overflow-hidden">
+    <section ref={sectionRef} id="metodologia" className="py-16 bg-background relative overflow-hidden">
       <div className="absolute -bottom-48 -right-48 w-[550px] h-[550px] rounded-full bg-primary/[0.04] pointer-events-none" />
       <div className="container">
         <div className="grid md:grid-cols-2 gap-24 items-center">

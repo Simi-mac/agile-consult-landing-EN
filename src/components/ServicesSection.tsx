@@ -1,6 +1,7 @@
 import { BookOpen, Users, UserCircle, BarChart3, ArrowRight } from "lucide-react";
 import { whatsappLink, WA_MESSAGES } from "@/lib/whatsapp";
 import { useReveal } from "@/hooks/use-reveal";
+import { useSectionView, trackServiceCtaClick } from "@/analytics";
 
 const services = [
   {
@@ -65,7 +66,7 @@ const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
       style={{ transitionDelay: `${i * 0.1}s` }}
     >
       <div
-        className={`group relative flex flex-col h-full bg-dark-3 border rounded-2xl p-6 transition-all duration-300 overflow-hidden hover:-translate-y-[7px] ${
+        className={`group relative flex flex-col h-full bg-dark-3 border rounded-2xl p-5 transition-all duration-300 overflow-hidden hover:-translate-y-[7px] ${
           s.gold
             ? "border-secondary/10 hover:border-secondary/20 hover:shadow-[0_22px_56px_rgba(0,0,0,0.28),0_0_36px_hsl(var(--gold)/0.07)]"
             : "border-foreground/[0.055] hover:border-primary/15 hover:shadow-[0_22px_56px_rgba(0,0,0,0.28),0_0_36px_hsl(var(--teal)/0.07)]"
@@ -90,7 +91,7 @@ const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
         </span>
 
         <span
-          className={`self-start inline-flex items-center gap-1.5 text-[10.5px] font-bold tracking-[1.3px] uppercase px-3 py-1 rounded-full mb-3.5 ${
+          className={`self-start inline-flex items-center gap-1.5 text-[9.5px] font-bold tracking-[1.3px] uppercase px-2.5 py-0.5 rounded-full mb-2.5 ${
             s.gold
               ? "bg-secondary/10 border border-secondary/20 text-gold-light"
               : "bg-primary/10 border border-primary/20 text-teal-light"
@@ -100,16 +101,16 @@ const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
         </span>
 
         <div
-          className={`w-[54px] h-[54px] rounded-[13px] flex items-center justify-center mb-4 ${
+          className={`w-[44px] h-[44px] rounded-[11px] flex items-center justify-center mb-3 ${
             s.gold
               ? "bg-secondary/10 border border-secondary/15"
               : "bg-primary/10 border border-primary/15"
           }`}
         >
-          <s.icon size={24} className={s.gold ? "text-secondary" : "text-primary"} />
+          <s.icon size={20} className={s.gold ? "text-secondary" : "text-primary"} />
         </div>
 
-        <h3 className="font-display text-xl font-bold mb-2">
+        <h3 className="font-display text-lg font-bold mb-1.5">
           {s.title}{" "}
           <span className={s.gold ? "text-secondary" : "text-primary"}>
             {s.highlight}
@@ -117,9 +118,9 @@ const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
           {s.subtitle && <><br />{s.subtitle}</>}
         </h3>
 
-        <p className="text-sm text-gray-1 leading-relaxed mb-3">{s.desc}</p>
+        <p className="text-sm text-gray-1 leading-relaxed mb-2.5">{s.desc}</p>
 
-        <ul className="flex flex-col gap-1.5 mb-4">
+        <ul className="flex flex-col gap-1 mb-3">
           {s.items.map((item) => (
             <li key={item} className="flex items-start gap-2.5 text-[13px] text-gray-2">
               <div
@@ -146,6 +147,7 @@ const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
           href={whatsappLink(s.waMessage)}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackServiceCtaClick(s.title.toLowerCase())}
           className={`mt-auto inline-flex items-center gap-[7px] text-[13px] font-bold transition-all duration-[250ms] hover:gap-3 ${
             s.gold ? "text-gold-light" : "text-teal-light"
           }`}
@@ -159,9 +161,10 @@ const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
 
 const ServicesSection = () => {
   const header = useReveal();
+  const sectionRef = useSectionView('services');
 
   return (
-    <section id="servicos" className="py-24 bg-dark-2 relative overflow-hidden">
+    <section ref={sectionRef} id="servicos" className="py-24 bg-dark-2 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="container">
         <div ref={header.ref} className={`text-center mb-16 rv ${header.visible ? "visible" : ""}`}>

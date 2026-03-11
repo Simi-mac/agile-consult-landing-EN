@@ -1,10 +1,12 @@
 import { whatsappLink, WA_MESSAGES } from "@/lib/whatsapp";
+import { trackWhatsAppClick } from "@/analytics";
 
 const WhatsAppFloat = () => (
   <a
     href={whatsappLink(WA_MESSAGES.general)}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={() => trackWhatsAppClick('float_button')}
     className="fixed bottom-7 right-7 z-50 w-[58px] h-[58px] rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] flex items-center justify-center animate-wa-pulse hover:scale-110 transition-transform duration-[250ms]"
     aria-label="Falar no WhatsApp"
   >

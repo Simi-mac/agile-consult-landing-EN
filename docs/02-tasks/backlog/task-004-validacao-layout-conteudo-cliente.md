@@ -36,3 +36,14 @@ Arquivos possivelmente impactados:
 
 Observações:
 - Use gravação de chamada/compartilhamento de tela para coletar feedback se necessário.
+
+
+# FEEDBACK DO CLIENTE 
+
+1. Servicos 
+1.1 Duvida sobre Presencial e In Company
+
+2. Metodologia
+2.2 Duvida sobre o grafico de Resultados
+
+Valores positivos e negativos podem gerar confusao na interpretacao do cliente. 

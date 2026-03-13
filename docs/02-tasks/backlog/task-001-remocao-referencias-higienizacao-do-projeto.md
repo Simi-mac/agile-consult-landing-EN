@@ -1,7 +1,7 @@
 # Task 001 - Remoção de referências de Ferramenta de Inicialização (LOVABLE)
 
 Status:
-Backlog
+Em andamento
 
 Tipo:
 Refatoração / limpeza
@@ -40,3 +40,6 @@ Arquivos possivelmente impactados:
 Observações:
 - Verificar também arquivos de lock (`package-lock.json`, `bun.lockb`) e, se necessário, regenerá-los após remover dependências.
 - Task 001 foi iniciada parcialmente (algumas referências já removidas). Atualizar status conforme progresso.
+
+Progresso:
+- Snippet do Microsoft Clarity adicionado em `index.html` (id: `vvbn2htosc`).

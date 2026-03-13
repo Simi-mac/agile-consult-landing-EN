@@ -51,7 +51,19 @@ const Footer = () => (
 
       {/* Copyright */}
       <div className="w-full pt-4 border-t border-foreground/[0.045]">
-        <p className="text-[12px] text-gray-1">© {new Date().getFullYear()} Tribo Ágil — Transformando com propósito desde 2020.</p>
+        <p className="text-[12px] text-gray-1">
+          © {new Date().getFullYear()} Tribo Ágil — Transformando com propósito desde 2020.{' '}
+          Desenvolvido por{' '}
+          <a
+            href="https://cnx-me.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-teal-light hover:underline"
+          >
+            Conecte.me
+          </a>
+          .
+        </p>
       </div>
     </div>
   </footer>

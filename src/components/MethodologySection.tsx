@@ -1,28 +1,21 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useReveal } from "@/hooks/use-reveal";
 import { useSectionView } from "@/analytics";
 
-const steps = [
-  { num: "01", title: "Diagnóstico do negócio", desc: "Mapeamos processos, pessoas, estratégia e cultura — identificando pontos críticos e oportunidades de alto impacto." },
-  { num: "02", title: "Plano de transformação", desc: "Construímos um roadmap personalizado com iniciativas priorizadas, OKRs definidos e marcos claros." },
-  { num: "03", title: "Implementação com sua equipe", desc: "Implementamos lado a lado com a equipe, garantindo transferência real de conhecimento." },
-  { num: "04", title: "Resultados medidos", desc: "Medimos com indicadores concretos, aprendemos com os dados e ajustamos continuamente." },
+// Dados estáticos das barras (width e highlight não são traduzíveis)
+const BAR_STATIC = [
+  { width: 68, highlight: false },
+  { width: 55, highlight: false },
+  { width: 40, highlight: true  },
+  { width: 35, highlight: true  },
+  { width: 42, highlight: false },
 ];
 
-type Bar = {
-  label: string;
-  value: string;
-  width: number;
-  highlight?: boolean;
-};
+type BarTranslation = { label: string; value: string };
+type Bar = BarTranslation & typeof BAR_STATIC[0];
 
-const bars: Bar[] = [
-  { label: "Eficiência operacional aumentou em média", value: "68%", width: 68 },
-  { label: "Engajamento de equipes aumentou em média", value: "55%", width: 55 },
-  { label: "Lead time reduzido", value: "40% mais rápido", width: 40, highlight: true },
-  { label: "Receita cresceu em média", value: "35%", width: 35, highlight: true },
-  { label: "Satisfação do cliente aumentou em média", value: "42%", width: 42 },
-];
+type Step = { num: string; title: string; desc: string };
 
 const ResultBar = ({ bar, inView }: { bar: Bar; inView: boolean }) => (
   <div>
@@ -55,11 +48,16 @@ const ResultBar = ({ bar, inView }: { bar: Bar; inView: boolean }) => (
 );
 
 const MethodologySection = () => {
+  const { t } = useTranslation();
   const left = useReveal();
   const right = useReveal();
   const barRef = useRef<HTMLDivElement>(null);
   const [barsInView, setBarsInView] = useState(false);
   const sectionRef = useSectionView('methodology');
+
+  const steps = t("methodology.steps", { returnObjects: true }) as Step[];
+  const barTranslations = t("methodology.bars", { returnObjects: true }) as BarTranslation[];
+  const bars: Bar[] = BAR_STATIC.map((b, i) => ({ ...b, ...barTranslations[i] }));
 
   useEffect(() => {
     const el = barRef.current;
@@ -84,13 +82,13 @@ const MethodologySection = () => {
         <div className="grid md:grid-cols-2 gap-24 items-center">
           <div ref={left.ref} className={`rv-l ${left.visible ? "visible" : ""}`}>
             <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-teal-light mb-5">
-              Nossa Metodologia
+              {t("methodology.badge")}
             </span>
             <h2 className="font-display font-extrabold text-[clamp(1.55rem,2.8vw,2.2rem)] tracking-[-1.5px] leading-[1.08] mb-3">
-              Como organizamos sua empresa em <span className="text-primary">4 etapas</span>
+              {t("methodology.title_pre")} <span className="text-primary">{t("methodology.title_hl")}</span>
             </h2>
             <p className="text-[14px] text-gray-1 leading-relaxed mb-7">
-              Seguimos um processo estruturado que garante consistência, aprendizado contínuo e entrega de valor real.
+              {t("methodology.description")}
             </p>
             <div className="flex flex-col">
               {steps.map((s) => (
@@ -109,17 +107,17 @@ const MethodologySection = () => {
 
           <div ref={right.ref} className={`rv-r ${right.visible ? "visible" : ""}`}>
             <div ref={barRef} className="bg-white border border-gray-200 rounded-3xl p-8 shadow-lg relative overflow-hidden">
-              <h3 className="font-display text-[22px] font-bold mb-7 text-dark-1 relative">Resultados Médios dos Projetos</h3>
+              <h3 className="font-display text-[22px] font-bold mb-7 text-dark-1 relative">{t("methodology.results_title")}</h3>
               <div className="flex flex-col gap-5 relative">
                 {bars.map((bar) => (
                   <ResultBar key={bar.label} bar={bar} inView={barsInView} />
                 ))}
               </div>
               <div className="mt-6 p-4 bg-teal-50 rounded-xl text-[13px] text-gray-700 leading-relaxed relative">
-                <strong className="text-teal-700">Metodologia Tribo Ágil:</strong> combinamos Scrum, Kanban, OKRs, Design Thinking e SAFe com contexto real brasileiro e foco absoluto em implementação prática.
+                <strong className="text-teal-700">{t("methodology.methodology_hl")}</strong> {t("methodology.methodology_desc")}
               </div>
               <p className="mt-4 text-[11px] text-gray-500 text-center leading-relaxed relative">
-                Resultados médios observados em projetos de transformação ágil conduzidos pela Tribo Ágil.
+                {t("methodology.disclaimer")}
               </p>
             </div>
           </div>

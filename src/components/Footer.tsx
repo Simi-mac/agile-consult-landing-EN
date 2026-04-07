@@ -1,7 +1,14 @@
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo-fundo-transparente.png";
 import { Mail, Linkedin, Instagram } from "lucide-react";
 
-const Footer = () => (
+type FooterNavItem = { label: string; href: string };
+
+const Footer = () => {
+  const { t } = useTranslation();
+  const navLinks = t("footer.nav", { returnObjects: true }) as FooterNavItem[];
+
+  return (
   <footer className="bg-dark-2 border-t border-foreground/[0.055] py-8">
     <div className="container flex flex-col items-center text-center">
       {/* Logo centralizada */}
@@ -13,12 +20,7 @@ const Footer = () => (
 
       {/* Links de navegação */}
       <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mb-4">
-        {[
-          { label: "Sobre", href: "#sobre" },
-          { label: "Serviços", href: "#servicos" },
-          { label: "Metodologia", href: "#metodologia" },
-          { label: "Contato", href: "#contato" },
-        ].map((l) => (
+        {navLinks.map((l) => (
           <a key={l.label} href={l.href} className="text-[13px] text-gray-2 hover:text-teal-light transition-colors duration-200">
             {l.label}
           </a>
@@ -52,8 +54,8 @@ const Footer = () => (
       {/* Copyright */}
       <div className="w-full pt-4 border-t border-foreground/[0.045]">
         <p className="text-[12px] text-gray-1">
-          © {new Date().getFullYear()} Tribo Ágil — Transformando com propósito desde 2020.{' '}
-          Desenvolvido por{' '}
+          {t("footer.copyright", { year: new Date().getFullYear() })}{' '}
+          {t("footer.developed_by")}{' '}
           <a
             href="https://cnx-me.com.br"
             target="_blank"
@@ -67,6 +69,7 @@ const Footer = () => (
       </div>
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer;

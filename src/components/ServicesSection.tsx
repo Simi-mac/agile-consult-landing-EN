@@ -1,62 +1,30 @@
 import { BookOpen, Users, UserCircle, BarChart3, ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { whatsappLink, WA_MESSAGES } from "@/lib/whatsapp";
 import { useReveal } from "@/hooks/use-reveal";
 import { useSectionView, trackServiceCtaClick } from "@/analytics";
 
-const services = [
-  {
-    num: "01",
-    badge: "PMEs & Grandes Empresas",
-    icon: BarChart3,
-    title: "Consultoria",
-    highlight: "Organizacional",
-    desc: "Estruturamos processos, rituais e gestão para transformar sua empresa em uma operação eficiente.",
-    items: ["Diagnóstico organizacional completo", "Identificação de gargalos e pontos críticos", "Transformação ágil em escala (SAFe, LeSS)", "Plano de ação prático e acompanhado"],
-    cta: "Solicitar diagnóstico",
-    waMessage: WA_MESSAGES.consultoria,
-    gold: true,
-  },
-  {
-    num: "02",
-    badge: "Individual & Grupo",
-    icon: UserCircle,
-    title: "Mentorias",
-    highlight: "Individuais",
-    subtitle: "e em Grupo",
-    desc: "Acompanhamento estratégico para líderes que querem estruturar gestão e crescer com previsibilidade.",
-    items: ["Mentoria 1-a-1 com especialistas", "Grupos de mentoria temáticos", "Desenvolvimento de liderança ágil", "Carreira em agilidade (PM, PO, SM, Coach)"],
-    cta: "Quero ser mentorado",
-    waMessage: WA_MESSAGES.mentoria,
-    gold: false,
-  },
-  {
-    num: "03",
-    badge: "Presencial & In-Company",
-    icon: Users,
-    title: "Treinamentos",
-    highlight: "Presenciais",
-    subtitle: "Personalizados",
-    desc: "Capacite sua equipe para trabalhar com mais clareza, autonomia e colaboração.",
-    items: ["Scrum, Kanban e Lean para equipes", "Liderança Ágil e Gestão de Times", "OKRs — definição, alinhamento e execução", "Design Thinking e Inovação"],
-    cta: "Solicitar proposta",
-    waMessage: WA_MESSAGES.treinamento,
-    gold: true,
-  },
-  {
-    num: "04",
-    badge: "Online & Assíncrono",
-    icon: BookOpen,
-    title: "Academia",
-    highlight: "Tribo Ágil",
-    desc: "Aprenda métodos ágeis na prática e aplique imediatamente na sua empresa.",
-    items: ["Cursos online práticos e aplicáveis", "Conteúdo atualizado por especialistas", "Certificações e trilhas de aprendizado", "Comunidade e networking ativo"],
-    cta: "Acessar a Academia",
-    waMessage: WA_MESSAGES.academia,
-    gold: false,
-  },
+// Dados estáticos (não traduzíveis): ícone, waMessage, cor/estilo, número
+const SERVICE_STATIC = [
+  { num: "01", icon: BarChart3, waMessage: WA_MESSAGES.consultoria, gold: true  },
+  { num: "02", icon: UserCircle, waMessage: WA_MESSAGES.mentoria,    gold: false },
+  { num: "03", icon: Users,      waMessage: WA_MESSAGES.treinamento, gold: true  },
+  { num: "04", icon: BookOpen,   waMessage: WA_MESSAGES.academia,    gold: false },
 ];
 
-const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
+type ServiceTranslation = {
+  badge: string;
+  title: string;
+  highlight: string;
+  subtitle?: string;
+  desc: string;
+  items: string[];
+  cta: string;
+};
+
+type ServiceItem = ServiceTranslation & typeof SERVICE_STATIC[0];
+
+const ServiceCard = ({ s, i }: { s: ServiceItem; i: number }) => {
   const { ref, visible } = useReveal();
 
   return (
@@ -160,8 +128,12 @@ const ServiceCard = ({ s, i }: { s: typeof services[0]; i: number }) => {
 };
 
 const ServicesSection = () => {
+  const { t } = useTranslation();
   const header = useReveal();
   const sectionRef = useSectionView('services');
+
+  const serviceTranslations = t("services.items", { returnObjects: true }) as ServiceTranslation[];
+  const services: ServiceItem[] = SERVICE_STATIC.map((s, i) => ({ ...s, ...serviceTranslations[i] }));
 
   return (
     <section ref={sectionRef} id="servicos" className="py-24 bg-dark-2 relative overflow-hidden">
@@ -169,13 +141,13 @@ const ServicesSection = () => {
       <div className="container">
         <div ref={header.ref} className={`text-center mb-16 rv ${header.visible ? "visible" : ""}`}>
           <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-teal-light mb-5">
-            Como podemos ajudar você ou sua empresa
+            {t("services.badge")}
           </span>
           <h2 className="font-display font-extrabold text-[clamp(1.9rem,3.5vw,2.9rem)] leading-[1.08] tracking-[-1.5px] mb-3.5">
-            Soluções para estruturar gestão, alinhar equipes<br />e acelerar resultados
+            {t("services.title")}
           </h2>
           <p className="text-base text-gray-1 leading-relaxed max-w-xl mx-auto">
-            Da formação de líderes à transformação organizacional, aplicamos métodos ágeis com foco em resultado real.
+            {t("services.description")}
           </p>
         </div>
 

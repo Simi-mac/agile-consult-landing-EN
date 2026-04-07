@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "methodology": "Methodology",
+    "cta": "Book a free call"
+  },
+  "hero": {
+    "badge": "Agile transformation for scaling teams",
+    "title_pre": "You scaled fast. Now let's build the",
+    "title_hl1": "structure",
+    "title_mid": "to match.",
+    "title_hl2": "",
+    "description": "We bring structure to fast-growing companies — through hands-on agile consulting, leadership coaching, and team training that sticks.",
+    "chips": ["Real processes", "Teams that execute", "Results you can measure"],
+    "cta_primary": "Get a free operations assessment",
+    "cta_secondary": "See how we work"
+  },
+  "about": {
+    "badge": "Why it works",
+    "title_pre": "Structure isn't slowing you down.",
+    "title_hl": "The lack of it is.",
+    "description": "Since 2020, we've embedded into fast-moving companies and helped their leaders turn chaos into operating systems — using agile frameworks that fit the real world, not just the textbook.",
+    "benefits": [
+      { "title": "Operational clarity — from week one", "desc": "Teams that leave training with defined processes and a clear work rhythm." },
+      { "title": "Management systems your team will actually use", "desc": "Agile rituals adapted to the business context — without unnecessary theory." },
+      { "title": "Leaders who drive results — not just manage people", "desc": "Practical leadership development for those who manage people and results." }
+    ],
+    "stats_badge": "Proven impact",
+    "stats": [
+      { "n": "+200", "label": "Leaders trained" },
+      { "n": "+30",  "label": "Companies transformed" },
+      { "n": "95%",  "label": "Satisfaction rate" },
+      { "n": "4.9",  "label": "Average rating" }
+    ],
+    "methodology_hl": "Tribo Ágil Methodology:",
+    "methodology_desc": "Scrum, Kanban, OKRs, Design Thinking and SAFe — adapted to the real business context.",
+    "since_prefix": "Tribo Ágil — since",
+    "since_year": "2020",
+    "since_suffix": "in the market"
+  },
+  "services": {
+    "badge": "What we offer",
+    "title": "Three ways we work with you — pick what fits where you are right now",
+    "description": "Whether you need consulting, coaching, or hands-on training — we meet you where you are.",
+    "items": [
+      {
+        "badge": "SMEs & Large Companies",
+        "title": "Organizational",
+        "highlight": "Consulting",
+        "desc": "We structure processes, rituals and management to transform your company into an efficient operation.",
+        "items": [
+          "Complete organizational diagnosis",
+          "Identification of bottlenecks and critical points",
+          "Agile transformation at scale (SAFe, LeSS)",
+          "Practical action plan with follow-up"
+        ],
+        "cta": "Request a free assessment"
+      },
+      {
+        "badge": "Individual & Group",
+        "title": "Individual",
+        "highlight": "Mentoring",
+        "subtitle": "& Group",
+        "desc": "Strategic support for leaders who want to structure management and grow with predictability.",
+        "items": [
+          "1-on-1 mentoring with specialists",
+          "Thematic mentoring groups",
+          "Agile leadership development",
+          "Career in agility (PM, PO, SM, Coach)"
+        ],
+        "cta": "Apply for mentoring"
+      },
+      {
+        "badge": "On-site & In-Company",
+        "title": "On-site",
+        "highlight": "Training",
+        "subtitle": "Customized",
+        "desc": "Empower your team to work with more clarity, autonomy and collaboration.",
+        "items": [
+          "Scrum, Kanban and Lean for teams",
+          "Agile Leadership and Team Management",
+          "OKRs — definition, alignment and execution",
+          "Design Thinking and Innovation"
+        ],
+        "cta": "Request proposal"
+      },
+      {
+        "badge": "Online & Asynchronous",
+        "title": "Academy",
+        "highlight": "Tribo Ágil",
+        "desc": "Learn agile methods in practice and apply them immediately in your company.",
+        "items": [
+          "Practical and applicable online courses",
+          "Content updated by experts",
+          "Certifications and learning paths",
+          "Community and active networking"
+        ],
+        "cta": "Explore the Academy"
+      }
+    ]
+  },
+  "methodology": {
+    "badge": "How it works",
+    "title_pre": "How we turn your operations around —",
+    "title_hl": "in 4 focused steps",
+    "description": "We follow a structured process that ensures consistency, continuous learning and real value delivery.",
+    "steps": [
+      { "num": "01", "title": "Operations audit", "desc": "We audit your current people, processes, and priorities — surfacing the exact bottlenecks holding your team back." },
+      { "num": "02", "title": "Custom transformation roadmap", "desc": "We design a roadmap tailored to your reality — with clear milestones, ownership, and timelines your team can follow." },
+      { "num": "03", "title": "Side-by-side implementation", "desc": "We work directly alongside your team — not just advise from the sidelines — to build capability that lasts." },
+      { "num": "04", "title": "Measure, learn, and keep improving", "desc": "We track outcomes with clear indicators, run retrospectives, and keep adjusting until results stick." }
+    ],
+    "results_title": "Average Project Results",
+    "bars": [
+      { "label": "Operational efficiency increased on average", "value": "68%" },
+      { "label": "Team engagement increased on average", "value": "55%" },
+      { "label": "Lead time reduced", "value": "40% faster" },
+      { "label": "Revenue grew on average", "value": "35%" },
+      { "label": "Customer satisfaction increased on average", "value": "42%" }
+    ],
+    "methodology_hl": "Tribo Ágil Methodology:",
+    "methodology_desc": "we combine Scrum, Kanban, OKRs, Design Thinking and SAFe with absolute focus on practical implementation.",
+    "disclaimer": "Average results observed in agile transformation projects conducted by Tribo Ágil."
+  },
+  "cta": {
+    "badge": "Ready when you are",
+    "title_1": "Your team is capable of more.",
+    "title_2": "Let's build the",
+    "title_highlight": "structure to prove it.",
+    "description": "Schedule a 30-minute strategy call — no commitment, no pitch decks. Just a real conversation.",
+    "button": "Book a 30-min strategy call",
+    "online_label": "● 100% remote",
+    "tagline": "Reply within 1 business day · No strings attached"
+  },
+  "footer": {
+    "nav": [
+      { "label": "About", "href": "#sobre" },
+      { "label": "Services", "href": "#servicos" },
+      { "label": "Methodology", "href": "#metodologia" },
+      { "label": "Contact", "href": "#contato" }
+    ],
+    "copyright": "© {{year}} Tribo Ágil — Transforming with purpose since 2020.",
+    "developed_by": "Developed by"
+  },
+  "whatsapp": {
+    "aria_label": "Chat on WhatsApp"
+  },
+  "seo": {
+    "title": "Tribo Ágil — Consulting, Mentoring & Agile Training",
+    "description": "We unlock the potential of people and organizations with agility, collaboration and purpose. Consulting, training and mentoring since 2020."
+  }
+}

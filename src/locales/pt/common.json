@@ -1,0 +1,153 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "services": "Serviços",
+    "methodology": "Metodologia",
+    "cta": "Falar com especialista"
+  },
+  "hero": {
+    "badge": "Consultoria, Mentoria & Treinamento",
+    "title_pre": "Organizamos empresas que",
+    "title_hl1": "cresceram",
+    "title_mid": "sem",
+    "title_hl2": "estrutura.",
+    "description": "Consultoria e treinamentos em métodos ágeis para transformar caos operacional em processos claros e equipes alinhadas.",
+    "chips": ["Estrutura de processos", "Equipes alinhadas", "Resultados mensuráveis"],
+    "cta_primary": "Agendar diagnóstico gratuito",
+    "cta_secondary": "Conheça nossos serviços"
+  },
+  "about": {
+    "badge": "Quem somos",
+    "title_pre": "Resultados reais para empresas que precisam",
+    "title_hl": "crescer com estrutura",
+    "description": "Desde 2020 ajudamos líderes e equipes a transformar caos operacional em processos claros — com metodologias ágeis aplicadas ao contexto real do mercado brasileiro.",
+    "benefits": [
+      { "title": "Clareza operacional imediata", "desc": "Times que saem dos treinamentos com processos definidos e ritmo de trabalho claro." },
+      { "title": "Gestão que realmente funciona", "desc": "Rituais ágeis adaptados ao contexto brasileiro — sem teoria desnecessária." },
+      { "title": "Líderes mais confiantes", "desc": "Desenvolvimento prático de liderança para quem gerencia pessoas e resultados." }
+    ],
+    "stats_badge": "Impacto comprovado",
+    "stats": [
+      { "n": "+200", "label": "Profissionais treinados" },
+      { "n": "+30",  "label": "Empresas atendidas" },
+      { "n": "95%",  "label": "Taxa de satisfação" },
+      { "n": "4.9",  "label": "Avaliação média" }
+    ],
+    "methodology_hl": "Metodologia Tribo Ágil:",
+    "methodology_desc": "Scrum, Kanban, OKRs, Design Thinking e SAFe — adaptados ao contexto real brasileiro.",
+    "since_prefix": "Tribo Ágil — desde",
+    "since_year": "2020",
+    "since_suffix": "no mercado"
+  },
+  "services": {
+    "badge": "Como podemos ajudar você ou sua empresa",
+    "title": "Soluções para estruturar gestão, alinhar equipes\ne acelerar resultados",
+    "description": "Da formação de líderes à transformação organizacional, aplicamos métodos ágeis com foco em resultado real.",
+    "items": [
+      {
+        "badge": "PMEs & Grandes Empresas",
+        "title": "Consultoria",
+        "highlight": "Organizacional",
+        "desc": "Estruturamos processos, rituais e gestão para transformar sua empresa em uma operação eficiente.",
+        "items": [
+          "Diagnóstico organizacional completo",
+          "Identificação de gargalos e pontos críticos",
+          "Transformação ágil em escala (SAFe, LeSS)",
+          "Plano de ação prático e acompanhado"
+        ],
+        "cta": "Solicitar diagnóstico"
+      },
+      {
+        "badge": "Individual & Grupo",
+        "title": "Mentorias",
+        "highlight": "Individuais",
+        "subtitle": "e em Grupo",
+        "desc": "Acompanhamento estratégico para líderes que querem estruturar gestão e crescer com previsibilidade.",
+        "items": [
+          "Mentoria 1-a-1 com especialistas",
+          "Grupos de mentoria temáticos",
+          "Desenvolvimento de liderança ágil",
+          "Carreira em agilidade (PM, PO, SM, Coach)"
+        ],
+        "cta": "Quero ser mentorado"
+      },
+      {
+        "badge": "Presencial & In-Company",
+        "title": "Treinamentos",
+        "highlight": "Presenciais",
+        "subtitle": "Personalizados",
+        "desc": "Capacite sua equipe para trabalhar com mais clareza, autonomia e colaboração.",
+        "items": [
+          "Scrum, Kanban e Lean para equipes",
+          "Liderança Ágil e Gestão de Times",
+          "OKRs — definição, alinhamento e execução",
+          "Design Thinking e Inovação"
+        ],
+        "cta": "Solicitar proposta"
+      },
+      {
+        "badge": "Online & Assíncrono",
+        "title": "Academia",
+        "highlight": "Tribo Ágil",
+        "desc": "Aprenda métodos ágeis na prática e aplique imediatamente na sua empresa.",
+        "items": [
+          "Cursos online práticos e aplicáveis",
+          "Conteúdo atualizado por especialistas",
+          "Certificações e trilhas de aprendizado",
+          "Comunidade e networking ativo"
+        ],
+        "cta": "Acessar a Academia"
+      }
+    ]
+  },
+  "methodology": {
+    "badge": "Nossa Metodologia",
+    "title_pre": "Como organizamos sua empresa em",
+    "title_hl": "4 etapas",
+    "description": "Seguimos um processo estruturado que garante consistência, aprendizado contínuo e entrega de valor real.",
+    "steps": [
+      { "num": "01", "title": "Diagnóstico do negócio", "desc": "Mapeamos processos, pessoas, estratégia e cultura — identificando pontos críticos e oportunidades de alto impacto." },
+      { "num": "02", "title": "Plano de transformação", "desc": "Construímos um roadmap personalizado com iniciativas priorizadas, OKRs definidos e marcos claros." },
+      { "num": "03", "title": "Implementação com sua equipe", "desc": "Implementamos lado a lado com a equipe, garantindo transferência real de conhecimento." },
+      { "num": "04", "title": "Resultados medidos", "desc": "Medimos com indicadores concretos, aprendemos com os dados e ajustamos continuamente." }
+    ],
+    "results_title": "Resultados Médios dos Projetos",
+    "bars": [
+      { "label": "Eficiência operacional aumentou em média", "value": "68%" },
+      { "label": "Engajamento de equipes aumentou em média", "value": "55%" },
+      { "label": "Lead time reduzido", "value": "40% mais rápido" },
+      { "label": "Receita cresceu em média", "value": "35%" },
+      { "label": "Satisfação do cliente aumentou em média", "value": "42%" }
+    ],
+    "methodology_hl": "Metodologia Tribo Ágil:",
+    "methodology_desc": "combinamos Scrum, Kanban, OKRs, Design Thinking e SAFe com contexto real brasileiro e foco absoluto em implementação prática.",
+    "disclaimer": "Resultados médios observados em projetos de transformação ágil conduzidos pela Tribo Ágil."
+  },
+  "cta": {
+    "badge": "Diagnóstico Gratuito",
+    "title_1": "Quer estruturar sua empresa",
+    "title_2": "com mais",
+    "title_highlight": "agilidade e propósito?",
+    "description": "Agende uma conversa estratégica pelo WhatsApp — resposta rápida, sem compromisso, sem formulários.",
+    "button": "Agendar conversa estratégica",
+    "online_label": "● Online",
+    "tagline": "Resposta em minutos · Sem compromisso"
+  },
+  "footer": {
+    "nav": [
+      { "label": "Sobre", "href": "#sobre" },
+      { "label": "Serviços", "href": "#servicos" },
+      { "label": "Metodologia", "href": "#metodologia" },
+      { "label": "Contato", "href": "#contato" }
+    ],
+    "copyright": "© {{year}} Tribo Ágil — Transformando com propósito desde 2020.",
+    "developed_by": "Desenvolvido por"
+  },
+  "whatsapp": {
+    "aria_label": "Falar no WhatsApp"
+  },
+  "seo": {
+    "title": "Tribo Ágil — Consultoria, Mentoria & Treinamento Ágil",
+    "description": "Destravamos o potencial de pessoas e organizações com agilidade, colaboração e propósito. Consultoria, treinamentos e mentorias desde 2020."
+  }
+}

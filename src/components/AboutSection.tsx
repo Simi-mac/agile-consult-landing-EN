@@ -1,22 +1,21 @@
 import { CheckCircle2, TrendingUp, Users2, Star } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useReveal } from "@/hooks/use-reveal";
 
-const stats = [
-  { n: "+200", label: "Profissionais treinados", icon: Users2 },
-  { n: "+30",  label: "Empresas atendidas",      icon: TrendingUp },
-  { n: "95%",  label: "Taxa de satisfação",       icon: Star },
-  { n: "4.9",  label: "Avaliação média",          icon: Star },
-];
-
-const benefits = [
-  { title: "Clareza operacional imediata",   desc: "Times que saem dos treinamentos com processos definidos e ritmo de trabalho claro." },
-  { title: "Gestão que realmente funciona",  desc: "Rituais ágeis adaptados ao contexto brasileiro — sem teoria desnecessária." },
-  { title: "Líderes mais confiantes",        desc: "Desenvolvimento prático de liderança para quem gerencia pessoas e resultados." },
-];
+// Ícones mantidos no componente (não são traduzíveis)
+const STAT_ICONS = [Users2, TrendingUp, Star, Star];
 
 const AboutSection = () => {
+  const { t } = useTranslation();
   const left  = useReveal();
   const right = useReveal();
+
+  type Benefit = { title: string; desc: string };
+  type Stat    = { n: string; label: string };
+
+  const benefits = t("about.benefits", { returnObjects: true }) as Benefit[];
+  const statTexts = t("about.stats", { returnObjects: true }) as Stat[];
+  const stats = STAT_ICONS.map((icon, i) => ({ ...statTexts[i], icon }));
 
   return (
     <section id="sobre" className="py-24 bg-dark-2 relative overflow-hidden">
@@ -27,13 +26,13 @@ const AboutSection = () => {
           {/* ── Coluna esquerda ── */}
           <div ref={left.ref} className={`rv-l ${left.visible ? "visible" : ""}`}>
             <span className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[2px] uppercase px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-teal-light mb-5">
-              Quem somos
+              {t("about.badge")}
             </span>
             <h2 className="font-display font-extrabold text-[clamp(1.9rem,3.5vw,2.9rem)] leading-[1.08] tracking-[-1.5px] mb-5">
-              Resultados reais para empresas que precisam <span className="text-primary">crescer com estrutura</span>
+              {t("about.title_pre")} <span className="text-primary">{t("about.title_hl")}</span>
             </h2>
             <p className="text-[15.5px] text-gray-2 leading-relaxed mb-8">
-              Desde 2020 ajudamos líderes e equipes a transformar caos operacional em processos claros — com metodologias ágeis aplicadas ao contexto real do mercado brasileiro.
+              {t("about.description")}
             </p>
 
             {/* Benefícios concretos */}
@@ -59,7 +58,7 @@ const AboutSection = () => {
               <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-primary/5 pointer-events-none blur-2xl" />
 
               {/* Números em destaque */}
-              <p className="text-[11px] font-bold tracking-[2px] uppercase text-gray-1 mb-4">Impacto comprovado</p>
+              <p className="text-[11px] font-bold tracking-[2px] uppercase text-gray-1 mb-4">{t("about.stats_badge")}</p>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {stats.map((s) => (
                   <div
@@ -76,13 +75,13 @@ const AboutSection = () => {
 
               {/* Metodologia */}
               <div className="text-[13.5px] text-gray-2 leading-relaxed p-4 bg-primary/5 rounded-xl border border-primary/10 mb-4">
-                <strong className="text-teal-light">Metodologia Tribo Ágil:</strong>{" "}
-                Scrum, Kanban, OKRs, Design Thinking e SAFe — adaptados ao contexto real brasileiro.
+                <strong className="text-teal-light">{t("about.methodology_hl")}</strong>{" "}
+                {t("about.methodology_desc")}
               </div>
 
               {/* Ano discreto */}
               <p className="text-[12px] text-gray-1 text-center">
-                Tribo Ágil — desde <span className="font-semibold text-gray-2">2020</span> no mercado
+                {t("about.since_prefix")} <span className="font-semibold text-gray-2">{t("about.since_year")}</span> {t("about.since_suffix")}
               </p>
             </div>
           </div>

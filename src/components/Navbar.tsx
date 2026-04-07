@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import logo from "@/assets/logo-fundo-transparente.png";
 import { whatsappLink, WA_MESSAGES } from "@/lib/whatsapp";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -31,12 +33,12 @@ const Navbar = () => {
 
         {/* Center: main menu (hidden on small screens) */}
         <div className="hidden md:flex items-center gap-7 justify-center">
-          <a href="#sobre" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Sobre</a>
-          <a href="#servicos" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Serviços</a>
-          <a href="#metodologia" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">Metodologia</a>
+          <a href="#sobre" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">{t("nav.about")}</a>
+          <a href="#servicos" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">{t("nav.services")}</a>
+          <a href="#metodologia" className="text-sm font-medium text-gray-2 hover:text-foreground transition-colors">{t("nav.methodology")}</a>
         </div>
 
-        {/* Right: CTA (hidden on small screens) */}
+        {/* Right: CTA */}
         <div className="hidden md:flex items-center">
           <a
             href={whatsappLink(WA_MESSAGES.general)}
@@ -44,7 +46,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="bg-gradient-to-br from-primary to-teal-dark text-primary-foreground text-sm font-bold px-5 py-2.5 rounded-lg shadow-[0_4px_18px_hsl(var(--teal)/0.28)] hover:-translate-y-0.5 hover:shadow-[0_8px_26px_hsl(var(--teal)/0.42)] transition-all"
           >
-            Falar com especialista
+            {t("nav.cta")}
           </a>
         </div>
       </div>

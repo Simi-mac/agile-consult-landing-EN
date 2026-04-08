@@ -6,7 +6,7 @@
     "cta": "Book a free call"
   },
   "hero": {
-    "badge": "Agile transformation for scaling teams",
+    "badge": "Consulting, Coaching & Team Training",
     "title_pre": "You scaled fast. Now let's build the",
     "title_hl1": "structure",
     "title_mid": "to match.",
@@ -35,13 +35,13 @@
     ],
     "methodology_hl": "Tribo Ágil Methodology:",
     "methodology_desc": "Scrum, Kanban, OKRs, Design Thinking and SAFe — adapted to the real business context.",
-    "since_prefix": "Tribo Ágil — since",
-    "since_year": "2020",
-    "since_suffix": "in the market"
+    "since_prefix": "Tribo Ágil —",
+    "since_year": "Since 2020",
+    "since_suffix": ""
   },
   "services": {
     "badge": "What we offer",
-    "title": "Three ways we work with you — pick what fits where you are right now",
+    "title": "We offer a range of solutions — choose what best fits where you are right now.",
     "description": "Whether you need consulting, coaching, or hands-on training — we meet you where you are.",
     "items": [
       {
@@ -59,9 +59,8 @@
       },
       {
         "badge": "Individual & Group",
-        "title": "Individual",
+        "title": "Individual & Group",
         "highlight": "Mentoring",
-        "subtitle": "& Group",
         "desc": "Strategic support for leaders who want to structure management and grow with predictability.",
         "items": [
           "1-on-1 mentoring with specialists",
@@ -73,9 +72,8 @@
       },
       {
         "badge": "On-site & In-Company",
-        "title": "On-site",
-        "highlight": "Training",
-        "subtitle": "Customized",
+        "title": "Customized",
+        "highlight": "In-Person Training",
         "desc": "Empower your team to work with more clarity, autonomy and collaboration.",
         "items": [
           "Scrum, Kanban and Lean for teams",
@@ -87,8 +85,8 @@
       },
       {
         "badge": "Online & Asynchronous",
-        "title": "Academy",
-        "highlight": "Tribo Ágil",
+        "title": "Tribo Ágil",
+        "highlight": "Academy",
         "desc": "Learn agile methods in practice and apply them immediately in your company.",
         "items": [
           "Practical and applicable online courses",
@@ -124,7 +122,7 @@
     "disclaimer": "Average results observed in agile transformation projects conducted by Tribo Ágil."
   },
   "cta": {
-    "badge": "Ready when you are",
+    "badge": "Free Diagnostic",
     "title_1": "Your team is capable of more.",
     "title_2": "Let's build the",
     "title_highlight": "structure to prove it.",
@@ -144,7 +142,7 @@
     "developed_by": "Developed by"
   },
   "whatsapp": {
-    "aria_label": "Chat on WhatsApp"
+    "aria_label": "Chat on Telegram"
   },
   "seo": {
     "title": "Tribo Ágil — Consulting, Mentoring & Agile Training",

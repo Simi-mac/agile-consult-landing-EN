@@ -27,7 +27,7 @@ Foco: limpeza do projeto e organização da base.
   - remover comentários gerados automaticamente
 
   **Task relacionada:**  
-  `Task 001 — Remoção de referências Lovable`
+  `Task 001 — Remoção de referências 
 
 - Ajustes de branding
   - substituir logos temporários

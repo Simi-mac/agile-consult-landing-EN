@@ -46,8 +46,8 @@
     "items": [
       {
         "badge": "SMEs & Large Companies",
-        "title": "Organizational",
-        "highlight": "Consulting",
+        "title": "Consulting",
+        "highlight": "Organizational",
         "desc": "We structure processes, rituals and management to transform your company into an efficient operation.",
         "items": [
           "Complete organizational diagnosis",
@@ -59,8 +59,8 @@
       },
       {
         "badge": "Individual & Group",
-        "title": "Individual & Group",
-        "highlight": "Mentoring",
+        "title": "Mentoring",
+        "highlight": "Individual & Group",
         "desc": "Strategic support for leaders who want to structure management and grow with predictability.",
         "items": [
           "1-on-1 mentoring with specialists",
@@ -72,8 +72,8 @@
       },
       {
         "badge": "On-site & In-Company",
-        "title": "Customized",
-        "highlight": "In-Person Training",
+        "title": "Training",
+        "highlight": "Customized",
         "desc": "Empower your team to work with more clarity, autonomy and collaboration.",
         "items": [
           "Scrum, Kanban and Lean for teams",
@@ -85,8 +85,8 @@
       },
       {
         "badge": "Online & Asynchronous",
-        "title": "Tribo Ágil",
-        "highlight": "Academy",
+        "title": "Academy",
+        "highlight": "Tribo Ágil",
         "desc": "Learn agile methods in practice and apply them immediately in your company.",
         "items": [
           "Practical and applicable online courses",

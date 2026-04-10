@@ -79,10 +79,10 @@ const ServiceCard = ({ s, i }: { s: ServiceItem; i: number }) => {
         </div>
 
         <h3 className="font-display text-lg font-bold mb-1.5">
-          {s.title}{" "}
           <span className={s.gold ? "text-secondary" : "text-primary"}>
             {s.highlight}
-          </span>
+          </span>{" "}
+          {s.title}
           {s.subtitle && <><br />{s.subtitle}</>}
         </h3>
 

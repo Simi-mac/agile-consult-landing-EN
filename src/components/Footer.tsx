@@ -57,12 +57,12 @@ const Footer = () => {
           {t("footer.copyright", { year: new Date().getFullYear() })}{' '}
           {t("footer.developed_by")}{' '}
           <a
-            href="https://cnx-me.com.br"
+            href="https://www.athenaspace.com.br/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-teal-light hover:underline"
           >
-            Conecte.me
+            Athena Space
           </a>
           .
         </p>
